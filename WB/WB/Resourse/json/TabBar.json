@@ -1,0 +1,25 @@
+[
+  {
+    "imageName" : "home",
+    "clsName" : "HomeController",
+    "title" : "首页"
+  },
+  {
+    "imageName" : "message_center",
+    "clsName" : "MessageController",
+    "title" : "消息"
+  },
+  {
+    "clsName" : "ComposeController"
+  },
+  {
+    "imageName" : "discover",
+    "clsName" : "DiscoverController",
+    "title" : "发现"
+  },
+  {
+    "imageName" : "profile",
+    "clsName" : "MineController",
+    "title" : "我的"
+  }
+]
