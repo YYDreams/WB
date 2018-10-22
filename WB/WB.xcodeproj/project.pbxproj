@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7747C27FCF37762FC218988D /* Pods_WB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111ECA872715DFD1D28EF673 /* Pods_WB.framework */; };
+		78572884217DA00D0059D88B /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78572883217DA00D0059D88B /* BaseCell.swift */; };
 		9C4035D32154975100042526 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4035CF2154975100042526 /* LaunchScreen.storyboard */; };
 		9C4035D42154975100042526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4035D12154975100042526 /* Main.storyboard */; };
 		9C4035D621549AB900042526 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4035D521549AB900042526 /* UIButton+Extension.swift */; };
@@ -48,6 +49,7 @@
 		02F6485FC1C103CD7F1A6C80 /* Pods-WB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WB/Pods-WB.debug.xcconfig"; sourceTree = "<group>"; };
 		111ECA872715DFD1D28EF673 /* Pods_WB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		448D03FE8BDEF74B9E84C57A /* Pods-WB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WB.release.xcconfig"; path = "Pods/Target Support Files/Pods-WB/Pods-WB.release.xcconfig"; sourceTree = "<group>"; };
+		78572883217DA00D0059D88B /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		9C3B94F921547FCD001D65C9 /* WB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C3B950821547FCD001D65C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C4035D02154975100042526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 		9C966FF72154822100BFD21A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				78572883217DA00D0059D88B /* BaseCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -700,6 +703,7 @@
 				9C4035D82154A8D600042526 /* UIKit+Extension.swift in Sources */,
 				9C4035D621549AB900042526 /* UIButton+Extension.swift in Sources */,
 				9C9670222154822100BFD21A /* BaseModel.swift in Sources */,
+				78572884217DA00D0059D88B /* BaseCell.swift in Sources */,
 				9C9670252154822100BFD21A /* MessageController.swift in Sources */,
 				9C4035EA2154D8D500042526 /* UserAccount.swift in Sources */,
 				9CB06320215CB3BB00ECCF5E /* HomeCell.swift in Sources */,

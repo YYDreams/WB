@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 private let magin: CGFloat = 15
-class HomeCell: UITableViewCell {
+class HomeCell: BaseCell {
     //头像
     @IBOutlet weak var iconImageView: UIImageView!
     // 用户认证

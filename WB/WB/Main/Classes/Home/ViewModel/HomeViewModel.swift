@@ -23,15 +23,13 @@ class HomeViewModel: NSObject {
     
     var vipImage:UIImage?  //处理用户会员等级
     
-    //
     var pirUrls: [NSURL] = [NSURL]() //处理微博配图数据
     
     //自定义构造函数
     init(status : HomeStatusModel) {
         
        self.status = status
-        
-        
+
         //1>  处理来源
         
         //1. nil值校验
@@ -57,7 +55,6 @@ class HomeViewModel: NSObject {
             created_atText = NSDate.dateWithStr(time: createAt) as String
             
         }
-        
         //3>  处理用户认证图标
         let verfiedType = status.user?.verified_type ?? -1
        
@@ -80,13 +77,12 @@ class HomeViewModel: NSObject {
             
         }
         
-        //5
+        //5> 处理微博配图数据
         if let picUrlDicts = status.pic_urls {
             for picUrlDic  in picUrlDicts {
                 
             guard  let picUrlStr = picUrlDic["thumbnail_pic"] else {
-                
-                
+     
                 continue
                 
                 }
@@ -101,7 +97,7 @@ class HomeViewModel: NSObject {
     
 }
 
-//MARK: loadDataFromNetwoek
+//MARK: request Data
 extension HomeViewModel {
     
     

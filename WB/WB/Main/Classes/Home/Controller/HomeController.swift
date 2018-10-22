@@ -28,26 +28,19 @@ class HomeController: BaseTableViewController {
 }
 
 
-
-extension HomeVController{
-    
-    private  func  test1(){
-        
-    }
-    
-    
-    
-}
-
 //MARK: setupTableView
 extension HomeController{
     
     private func setupTableView(){
         
         tableView.register(UINib(nibName: "HomeCell", bundle: nil), forCellReuseIdentifier: HomeCellID)
+        //        FIX: 有毒   有问题
         //两个需要同时设置才起作用
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 200
+//        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.estimatedRowHeight = 200
+        
+        tableView.rowHeight = 300
+        
 //        //取消分割线
         tableView.separatorStyle = .none
         
