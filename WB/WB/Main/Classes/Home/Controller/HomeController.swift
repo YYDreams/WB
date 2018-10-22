@@ -103,7 +103,7 @@ extension HomeController{
 
             for picUrl in vm.pirUrls {
                 //进入组队列
-                   group.enter()
+                group.enter()
                 SDWebImageManager.shared().loadImage(with: picUrl as URL, options: [], progress: nil) { (_, _, _, _, _, _) in
                     print("下载了一张图片")
                 //离开组队列

@@ -25,6 +25,7 @@ class HomeViewModel: NSObject {
     
     var pirUrls: [NSURL] = [NSURL]() //处理微博配图数据
     
+    
     //自定义构造函数
     init(status : HomeStatusModel) {
         

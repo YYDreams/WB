@@ -18,14 +18,9 @@ class HomeStatusModel: BaseModel {
 //                return
 //            }
 //            created_atText = NSDate.dateWithStr(time: created_at) as String
-//
-//
-            
+        
         }
-        
-        
     }
-    
     var source: String?{   // 来源
         didSet{      //相当于添加属性监听器
             
@@ -54,8 +49,10 @@ class HomeStatusModel: BaseModel {
     
     
     var user: HomeUserModel? //对应的用户
-    
+
     var pic_urls:[[String: String]]? //微博的配图
+    
+   var retweeted_status: HomeStatusModel? //微博对应的转发微博
     
     /**
      "pic_urls":[
@@ -71,25 +68,23 @@ class HomeStatusModel: BaseModel {
      ],
      
      */
-    
-//    // - 对数据处理的数量
-//    var sourceText: String?
-//    
-//    var created_atText:String?
-//    
-    
-    
+
     // MARK: 自定义构造函数
     init(dict: [String : AnyObject]) {
         super.init()
         setValuesForKeys(dict)
         
         
-        //将用户字典转成用户模型对象
+        //1.将用户字典转成用户模型对象
         if let userDic = dict["user"] as? [String: AnyObject]{
             user = HomeUserModel(dict: userDic)
             
             
+        }
+        //2.将转发微博字典转成转发微博模型对象
+        if let retweetedStatus = dict["retweeted_status"] as? [String: AnyObject]{
+            
+            retweeted_status = HomeStatusModel(dict: retweetedStatus)
         }
         
         

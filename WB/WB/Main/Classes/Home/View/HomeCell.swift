@@ -27,6 +27,9 @@ class HomeCell: BaseCell {
     @IBOutlet weak var contentTextLabel: UILabel!
     //正文的宽度
     @IBOutlet weak var contentWidthConst: NSLayoutConstraint!
+    
+     //转发微博的文字
+    @IBOutlet weak var retweetedLabel: UILabel!
     //collectionView
     @IBOutlet weak var collectionView: PicCollectionView!
     // 配图的高度
@@ -74,6 +77,10 @@ class HomeCell: BaseCell {
             print(picViewSize)
             
             collectionView.picUrls = viewModel.pirUrls
+            
+            //2.9 设置转发微博的正文
+            
+            
             
         }
         
