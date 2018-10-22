@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7747C27FCF37762FC218988D /* Pods_WB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111ECA872715DFD1D28EF673 /* Pods_WB.framework */; };
 		78572884217DA00D0059D88B /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78572883217DA00D0059D88B /* BaseCell.swift */; };
+		789FBD1A217DB3E400DB14BE /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789FBD19217DB3E400DB14BE /* PicCollectionView.swift */; };
+		789FBD1D217DB80A00DB14BE /* PicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789FBD1B217DB80A00DB14BE /* PicCell.swift */; };
+		789FBD1E217DB80A00DB14BE /* PicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789FBD1C217DB80A00DB14BE /* PicCell.xib */; };
 		9C4035D32154975100042526 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4035CF2154975100042526 /* LaunchScreen.storyboard */; };
 		9C4035D42154975100042526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4035D12154975100042526 /* Main.storyboard */; };
 		9C4035D621549AB900042526 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4035D521549AB900042526 /* UIButton+Extension.swift */; };
@@ -50,6 +53,9 @@
 		111ECA872715DFD1D28EF673 /* Pods_WB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		448D03FE8BDEF74B9E84C57A /* Pods-WB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WB.release.xcconfig"; path = "Pods/Target Support Files/Pods-WB/Pods-WB.release.xcconfig"; sourceTree = "<group>"; };
 		78572883217DA00D0059D88B /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		789FBD19217DB3E400DB14BE /* PicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
+		789FBD1B217DB80A00DB14BE /* PicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicCell.swift; sourceTree = "<group>"; };
+		789FBD1C217DB80A00DB14BE /* PicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicCell.xib; sourceTree = "<group>"; };
 		9C3B94F921547FCD001D65C9 /* WB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C3B950821547FCD001D65C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C4035D02154975100042526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -311,9 +317,9 @@
 		9C966FF82154822100BFD21A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9C9670032154822100BFD21A /* Home */,
 				9C966FF92154822100BFD21A /* Compose */,
 				9C966FFE2154822100BFD21A /* Discover */,
-				9C9670032154822100BFD21A /* Home */,
 				9C9670082154822100BFD21A /* Message */,
 				9C96700D2154822100BFD21A /* Mine */,
 				9C9670122154822100BFD21A /* TestViewController.swift */,
@@ -418,6 +424,9 @@
 			children = (
 				9CB0631E215CB3BB00ECCF5E /* HomeCell.swift */,
 				9CB0631F215CB3BB00ECCF5E /* HomeCell.xib */,
+				789FBD19217DB3E400DB14BE /* PicCollectionView.swift */,
+				789FBD1B217DB80A00DB14BE /* PicCell.swift */,
+				789FBD1C217DB80A00DB14BE /* PicCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -631,6 +640,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				789FBD1E217DB80A00DB14BE /* PicCell.xib in Resources */,
 				9CB06321215CB3BB00ECCF5E /* HomeCell.xib in Resources */,
 				9C4035D32154975100042526 /* LaunchScreen.storyboard in Resources */,
 				9C4035DC2154ABF100042526 /* VisitorView.xib in Resources */,
@@ -701,6 +711,7 @@
 			files = (
 				9CB0631B215C99DF00ECCF5E /* NSDate+Extension.swift in Sources */,
 				9C4035D82154A8D600042526 /* UIKit+Extension.swift in Sources */,
+				789FBD1D217DB80A00DB14BE /* PicCell.swift in Sources */,
 				9C4035D621549AB900042526 /* UIButton+Extension.swift in Sources */,
 				9C9670222154822100BFD21A /* BaseModel.swift in Sources */,
 				78572884217DA00D0059D88B /* BaseCell.swift in Sources */,
@@ -708,6 +719,7 @@
 				9C4035EA2154D8D500042526 /* UserAccount.swift in Sources */,
 				9CB06320215CB3BB00ECCF5E /* HomeCell.swift in Sources */,
 				9C9670272154822100BFD21A /* TestViewController.swift in Sources */,
+				789FBD1A217DB3E400DB14BE /* PicCollectionView.swift in Sources */,
 				9C9670212154822100BFD21A /* BaseUIViewController.swift in Sources */,
 				9C9670232154822100BFD21A /* ComposeController.swift in Sources */,
 				9CB06323215CB41F00ECCF5E /* HomeViewModel.swift in Sources */,

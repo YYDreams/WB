@@ -30,6 +30,7 @@ class BaseTableViewController: UITableViewController {
 }
 
 extension BaseTableViewController{
+    
     private func setupTableViewInit(){
         
         

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 private let HomeCellID = "HomeCellID"
 
 class HomeController: BaseTableViewController {
@@ -20,6 +20,8 @@ class HomeController: BaseTableViewController {
 
         setupNav()
         setupTableView()
+    if !UserAccount.userLogin() { return}
+        
        loadHomeStatusFromNetwork() //
         
         
@@ -34,12 +36,10 @@ extension HomeController{
     private func setupTableView(){
         
         tableView.register(UINib(nibName: "HomeCell", bundle: nil), forCellReuseIdentifier: HomeCellID)
-        //        FIX: 有毒   有问题
         //两个需要同时设置才起作用
-//        tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.estimatedRowHeight = 200
-        
-        tableView.rowHeight = 300
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 200
+
         
 //        //取消分割线
         tableView.separatorStyle = .none
@@ -80,9 +80,44 @@ extension HomeController{
                 self.viewModel.append(viewModel)
                 
                 }
-  
+            
+            //缓存图片
+            self.cacheImags(viewModel: self.viewModel)
+
+//            //4.刷新表格
+//          self.tableView.reloadData()
+        
+        }
+    }
+    
+    
+    private func cacheImags(viewModel: [HomeViewModel]){
+        /**
+          此处注意:
+         需下载完图片之后再刷新表格
+         */
+        // 缓存图片
+        
+        let group = DispatchGroup()
+        for vm in viewModel {
+
+            for picUrl in vm.pirUrls {
+                //进入组队列
+                   group.enter()
+                SDWebImageManager.shared().loadImage(with: picUrl as URL, options: [], progress: nil) { (_, _, _, _, _, _) in
+                    print("下载了一张图片")
+                //离开组队列
+                group.leave()
+                    
+                }
+            }
+        }
+
+        group.notify(queue:DispatchQueue.main) {
+            
             //4.刷新表格
-          self.tableView.reloadData()
+            self.tableView.reloadData()
+            print("刷新表格")
         
         }
     }
