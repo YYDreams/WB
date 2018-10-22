@@ -79,9 +79,14 @@ class HomeCell: BaseCell {
             collectionView.picUrls = viewModel.pirUrls
             
             //2.9 设置转发微博的正文
-            
-            
-            
+            if viewModel.status?.retweeted_status != nil {
+                
+                retweetedLabel.text = viewModel.status?.retweeted_status?.text
+                
+            } else{
+                retweetedLabel.text = nil
+            }
+
         }
         
     }
