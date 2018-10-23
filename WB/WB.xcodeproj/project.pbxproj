@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		7747C27FCF37762FC218988D /* Pods_WB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111ECA872715DFD1D28EF673 /* Pods_WB.framework */; };
 		78572884217DA00D0059D88B /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78572883217DA00D0059D88B /* BaseCell.swift */; };
+		7857954D217EAD2100B9243B /* swift微博第1天(项目搭建及层次结构剖析).xmind in Resources */ = {isa = PBXBuildFile; fileRef = 7857954C217EAD2100B9243B /* swift微博第1天(项目搭建及层次结构剖析).xmind */; };
+		78579550217EF66200B9243B /* ComposeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7857954E217EF66200B9243B /* ComposeController.swift */; };
+		78579551217EF66200B9243B /* ComposeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7857954F217EF66200B9243B /* ComposeController.xib */; };
+		78579553217EF8DF00B9243B /* ComposeNavTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78579552217EF8DF00B9243B /* ComposeNavTitleView.swift */; };
+		7857955B217F031700B9243B /* ComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7857955A217F031700B9243B /* ComposeTextView.swift */; };
 		789FBD1A217DB3E400DB14BE /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789FBD19217DB3E400DB14BE /* PicCollectionView.swift */; };
 		789FBD1D217DB80A00DB14BE /* PicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789FBD1B217DB80A00DB14BE /* PicCell.swift */; };
 		789FBD1E217DB80A00DB14BE /* PicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789FBD1C217DB80A00DB14BE /* PicCell.xib */; };
@@ -26,7 +31,6 @@
 		9C4035ED2154EBCC00042526 /* WBNewFeatureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4035EC2154EBCC00042526 /* WBNewFeatureController.swift */; };
 		9C4035F22154EF3E00042526 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4035F02154EF3E00042526 /* WelcomeController.swift */; };
 		9C4035F32154EF3E00042526 /* WelcomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C4035F12154EF3E00042526 /* WelcomeController.xib */; };
-		9C534EBC217E1D9E00CEFEEE /* swift微博第1天(项目搭建及层次结构剖析).xmind in Resources */ = {isa = PBXBuildFile; fileRef = 9C534EBB217E1D9E00CEFEEE /* swift微博第1天(项目搭建及层次结构剖析).xmind */; };
 		9C96701C2154822100BFD21A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C966FE62154822000BFD21A /* Assets.xcassets */; };
 		9C96701D2154822100BFD21A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C966FEE2154822100BFD21A /* AppDelegate.swift */; };
 		9C96701E2154822100BFD21A /* BaseNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C966FF12154822100BFD21A /* BaseNavViewController.swift */; };
@@ -34,7 +38,6 @@
 		9C9670202154822100BFD21A /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C966FF32154822100BFD21A /* BaseTableViewController.swift */; };
 		9C9670212154822100BFD21A /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C966FF42154822100BFD21A /* BaseUIViewController.swift */; };
 		9C9670222154822100BFD21A /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C966FF62154822100BFD21A /* BaseModel.swift */; };
-		9C9670232154822100BFD21A /* ComposeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C966FFB2154822100BFD21A /* ComposeController.swift */; };
 		9C9670242154822100BFD21A /* DiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9670002154822100BFD21A /* DiscoverController.swift */; };
 		9C9670252154822100BFD21A /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96700A2154822100BFD21A /* MessageController.swift */; };
 		9C9670262154822100BFD21A /* MineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96700F2154822100BFD21A /* MineController.swift */; };
@@ -54,6 +57,12 @@
 		111ECA872715DFD1D28EF673 /* Pods_WB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		448D03FE8BDEF74B9E84C57A /* Pods-WB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WB.release.xcconfig"; path = "Pods/Target Support Files/Pods-WB/Pods-WB.release.xcconfig"; sourceTree = "<group>"; };
 		78572883217DA00D0059D88B /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		7857954C217EAD2100B9243B /* swift微博第1天(项目搭建及层次结构剖析).xmind */ = {isa = PBXFileReference; lastKnownFileType = file; path = "swift微博第1天(项目搭建及层次结构剖析).xmind"; sourceTree = "<group>"; };
+		7857954E217EF66200B9243B /* ComposeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeController.swift; sourceTree = "<group>"; };
+		7857954F217EF66200B9243B /* ComposeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComposeController.xib; sourceTree = "<group>"; };
+		78579552217EF8DF00B9243B /* ComposeNavTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComposeNavTitleView.swift; path = WB/Main/Classes/Compose/View/ComposeNavTitleView.swift; sourceTree = SOURCE_ROOT; };
+		78579554217EFB2100B9243B /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7857955A217F031700B9243B /* ComposeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeTextView.swift; sourceTree = "<group>"; };
 		789FBD19217DB3E400DB14BE /* PicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
 		789FBD1B217DB80A00DB14BE /* PicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicCell.swift; sourceTree = "<group>"; };
 		789FBD1C217DB80A00DB14BE /* PicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicCell.xib; sourceTree = "<group>"; };
@@ -73,7 +82,6 @@
 		9C4035EC2154EBCC00042526 /* WBNewFeatureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNewFeatureController.swift; sourceTree = "<group>"; };
 		9C4035F02154EF3E00042526 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		9C4035F12154EF3E00042526 /* WelcomeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeController.xib; sourceTree = "<group>"; };
-		9C534EBB217E1D9E00CEFEEE /* swift微博第1天(项目搭建及层次结构剖析).xmind */ = {isa = PBXFileReference; lastKnownFileType = file; path = "swift微博第1天(项目搭建及层次结构剖析).xmind"; sourceTree = "<group>"; };
 		9C966FE62154822000BFD21A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C966FEE2154822100BFD21A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C966FF12154822100BFD21A /* BaseNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavViewController.swift; sourceTree = "<group>"; };
@@ -81,7 +89,6 @@
 		9C966FF32154822100BFD21A /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		9C966FF42154822100BFD21A /* BaseUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
 		9C966FF62154822100BFD21A /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
-		9C966FFB2154822100BFD21A /* ComposeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeController.swift; sourceTree = "<group>"; };
 		9C9670002154822100BFD21A /* DiscoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverController.swift; sourceTree = "<group>"; };
 		9C96700A2154822100BFD21A /* MessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
 		9C96700F2154822100BFD21A /* MineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineController.swift; sourceTree = "<group>"; };
@@ -111,9 +118,27 @@
 		6546A9D0880CFBA3392ECA25 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				78579554217EFB2100B9243B /* SnapKit.framework */,
 				111ECA872715DFD1D28EF673 /* Pods_WB.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78579558217F02AF00B9243B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			path = WB/Main/Classes/Compose/View;
+			sourceTree = SOURCE_ROOT;
+		};
+		78579559217F02B900B9243B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				78579552217EF8DF00B9243B /* ComposeNavTitleView.swift */,
+				7857955A217F031700B9243B /* ComposeTextView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		9C3B94F021547FCD001D65C9 = {
@@ -123,6 +148,7 @@
 				9C3B94FA21547FCD001D65C9 /* Products */,
 				E8A5FDF015C76999349CD25C /* Pods */,
 				6546A9D0880CFBA3392ECA25 /* Frameworks */,
+				9C6A6038217F7322007BB8FD /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,6 +207,14 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		9C6A6038217F7322007BB8FD /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				7857954C217EAD2100B9243B /* swift微博第1天(项目搭建及层次结构剖析).xmind */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		9C966FDE2154822000BFD21A /* Vender */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,7 +235,6 @@
 		9C966FE02154822000BFD21A /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				9C534EBB217E1D9E00CEFEEE /* swift微博第1天(项目搭建及层次结构剖析).xmind */,
 				9C4035CF2154975100042526 /* LaunchScreen.storyboard */,
 				9C4035D12154975100042526 /* Main.storyboard */,
 			);
@@ -335,7 +368,7 @@
 			children = (
 				9C966FFA2154822100BFD21A /* Controller */,
 				9C966FFC2154822100BFD21A /* Model */,
-				9C966FFD2154822100BFD21A /* View */,
+				78579559217F02B900B9243B /* View */,
 			);
 			path = Compose;
 			sourceTree = "<group>";
@@ -343,7 +376,8 @@
 		9C966FFA2154822100BFD21A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9C966FFB2154822100BFD21A /* ComposeController.swift */,
+				7857954E217EF66200B9243B /* ComposeController.swift */,
+				7857954F217EF66200B9243B /* ComposeController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -351,15 +385,9 @@
 		9C966FFC2154822100BFD21A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				78579558217F02AF00B9243B /* View */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		9C966FFD2154822100BFD21A /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		9C966FFE2154822100BFD21A /* Discover */ = {
@@ -645,9 +673,10 @@
 			files = (
 				789FBD1E217DB80A00DB14BE /* PicCell.xib in Resources */,
 				9CB06321215CB3BB00ECCF5E /* HomeCell.xib in Resources */,
+				78579551217EF66200B9243B /* ComposeController.xib in Resources */,
 				9C4035D32154975100042526 /* LaunchScreen.storyboard in Resources */,
 				9C4035DC2154ABF100042526 /* VisitorView.xib in Resources */,
-				9C534EBC217E1D9E00CEFEEE /* swift微博第1天(项目搭建及层次结构剖析).xmind in Resources */,
+				7857954D217EAD2100B9243B /* swift微博第1天(项目搭建及层次结构剖析).xmind in Resources */,
 				9C4035F32154EF3E00042526 /* WelcomeController.xib in Resources */,
 				9C96701C2154822100BFD21A /* Assets.xcassets in Resources */,
 				9C96702D2154898500BFD21A /* TabBar.json in Resources */,
@@ -688,6 +717,7 @@
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
@@ -698,6 +728,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
@@ -719,13 +750,13 @@
 				9C4035D621549AB900042526 /* UIButton+Extension.swift in Sources */,
 				9C9670222154822100BFD21A /* BaseModel.swift in Sources */,
 				78572884217DA00D0059D88B /* BaseCell.swift in Sources */,
+				7857955B217F031700B9243B /* ComposeTextView.swift in Sources */,
 				9C9670252154822100BFD21A /* MessageController.swift in Sources */,
 				9C4035EA2154D8D500042526 /* UserAccount.swift in Sources */,
 				9CB06320215CB3BB00ECCF5E /* HomeCell.swift in Sources */,
 				9C9670272154822100BFD21A /* TestViewController.swift in Sources */,
 				789FBD1A217DB3E400DB14BE /* PicCollectionView.swift in Sources */,
 				9C9670212154822100BFD21A /* BaseUIViewController.swift in Sources */,
-				9C9670232154822100BFD21A /* ComposeController.swift in Sources */,
 				9CB06323215CB41F00ECCF5E /* HomeViewModel.swift in Sources */,
 				9C96701D2154822100BFD21A /* AppDelegate.swift in Sources */,
 				9CB0631D215CA21B00ECCF5E /* HomeUserModel.swift in Sources */,
@@ -734,10 +765,12 @@
 				9C9670202154822100BFD21A /* BaseTableViewController.swift in Sources */,
 				9C4035E12154C66900042526 /* WBConst.swift in Sources */,
 				9C4035ED2154EBCC00042526 /* WBNewFeatureController.swift in Sources */,
+				78579550217EF66200B9243B /* ComposeController.swift in Sources */,
 				9C4035E82154CED600042526 /* NetworkTool.swift in Sources */,
 				9C9670292154850900BFD21A /* HomeController.swift in Sources */,
 				9C9670242154822100BFD21A /* DiscoverController.swift in Sources */,
 				9C4035F22154EF3E00042526 /* WelcomeController.swift in Sources */,
+				78579553217EF8DF00B9243B /* ComposeNavTitleView.swift in Sources */,
 				9C4035DD2154ABF100042526 /* VisitorView.swift in Sources */,
 				9C9670262154822100BFD21A /* MineController.swift in Sources */,
 				9C4035E62154C77600042526 /* WBOAuthViewController.swift in Sources */,

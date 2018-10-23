@@ -142,9 +142,13 @@
                             <constraint firstItem="ym4-DG-5eR" firstAttribute="top" secondItem="dY0-VL-yUq" secondAttribute="top" constant="1" id="v2F-ea-yCB"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2q9-ql-PHD" userLabel="转发的背景">
+                        <rect key="frame" x="0.0" y="91" width="419" height="104.5"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    </view>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="OFg-HY-UEc" customClass="PicCollectionView" customModule="WB" customModuleProvider="target">
                         <rect key="frame" x="15" y="120" width="217" height="66"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="66" id="Zab-2K-Fin"/>
                             <constraint firstAttribute="width" constant="217" id="xwB-fs-79v"/>
@@ -158,13 +162,18 @@
                     </collectionView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="说分手方式方法成功认购方式分分分分分郭德纲" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZA-yE-pP4">
                         <rect key="frame" x="15" y="93" width="300" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="300" id="06g-vG-2Hz"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="2q9-ql-PHD" firstAttribute="top" secondItem="ZXj-nP-3Sg" secondAttribute="bottom" constant="8" id="0XS-Ta-eDt"/>
                     <constraint firstItem="cXl-fu-4qK" firstAttribute="leading" secondItem="xYi-rc-mhr" secondAttribute="trailing" constant="15" id="3m1-dG-wtb"/>
+                    <constraint firstItem="2q9-ql-PHD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="4hJ-KY-ypi"/>
                     <constraint firstItem="OFg-HY-UEc" firstAttribute="top" secondItem="7ZA-yE-pP4" secondAttribute="bottom" constant="10" id="5w0-1u-wKl"/>
                     <constraint firstItem="xYi-rc-mhr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="9GN-Y4-FMH"/>
                     <constraint firstItem="WWs-YA-QWo" firstAttribute="bottom" secondItem="xYi-rc-mhr" secondAttribute="bottom" id="FT8-iv-ddY"/>
@@ -175,12 +184,13 @@
                     <constraint firstItem="WWs-YA-QWo" firstAttribute="trailing" secondItem="xYi-rc-mhr" secondAttribute="trailing" id="MYa-kr-oAL"/>
                     <constraint firstItem="7ZA-yE-pP4" firstAttribute="leading" secondItem="ZXj-nP-3Sg" secondAttribute="leading" id="Rec-B8-Czg"/>
                     <constraint firstItem="ZXj-nP-3Sg" firstAttribute="leading" secondItem="xYi-rc-mhr" secondAttribute="leading" id="V8e-ZK-jXE"/>
+                    <constraint firstAttribute="trailing" secondItem="2q9-ql-PHD" secondAttribute="trailing" id="X6p-vZ-ijI"/>
                     <constraint firstAttribute="trailing" secondItem="dY0-VL-yUq" secondAttribute="trailing" id="dOH-r4-EQU"/>
                     <constraint firstItem="ZXj-nP-3Sg" firstAttribute="top" secondItem="xYi-rc-mhr" secondAttribute="bottom" constant="15" id="dYI-Ta-cvW"/>
                     <constraint firstItem="OFg-HY-UEc" firstAttribute="leading" secondItem="xYi-rc-mhr" secondAttribute="leading" id="g4w-BD-aJX"/>
                     <constraint firstItem="vhS-JN-Eb7" firstAttribute="leading" secondItem="sta-nx-9ip" secondAttribute="trailing" constant="10" id="hgb-TO-Kfb"/>
+                    <constraint firstItem="dY0-VL-yUq" firstAttribute="top" secondItem="2q9-ql-PHD" secondAttribute="bottom" id="l7P-B5-Eah"/>
                     <constraint firstItem="7ZA-yE-pP4" firstAttribute="top" secondItem="ZXj-nP-3Sg" secondAttribute="bottom" constant="10" id="lkw-cB-GfZ"/>
-                    <constraint firstAttribute="bottom" secondItem="dY0-VL-yUq" secondAttribute="bottom" id="ll6-bz-6CV"/>
                     <constraint firstItem="lBd-rX-itD" firstAttribute="centerY" secondItem="cXl-fu-4qK" secondAttribute="centerY" id="nrD-vZ-d2l"/>
                     <constraint firstItem="sta-nx-9ip" firstAttribute="bottom" secondItem="xYi-rc-mhr" secondAttribute="bottom" id="s9b-vV-S3m"/>
                     <constraint firstItem="dY0-VL-yUq" firstAttribute="top" secondItem="OFg-HY-UEc" secondAttribute="bottom" priority="700" constant="10" id="sRI-20-Vun"/>
@@ -190,20 +200,25 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="bottomView" destination="dY0-VL-yUq" id="wxt-Vi-eFi"/>
                 <outlet property="collectionView" destination="OFg-HY-UEc" id="UpQ-dw-FtK"/>
                 <outlet property="contentTextLabel" destination="ZXj-nP-3Sg" id="vRQ-rB-GZm"/>
                 <outlet property="contentWidthConst" destination="2Dp-py-z4Y" id="gLB-jN-GpD"/>
                 <outlet property="created_atLabel" destination="sta-nx-9ip" id="cK5-1T-NUN"/>
                 <outlet property="iconImageView" destination="xYi-rc-mhr" id="kh5-HN-3o0"/>
                 <outlet property="nameLabel" destination="cXl-fu-4qK" id="vHm-pT-oCa"/>
+                <outlet property="picViewBottomConst" destination="sRI-20-Vun" id="kpE-fr-Z3Q"/>
                 <outlet property="picViewHeightConst" destination="Zab-2K-Fin" id="Q02-wK-qcq"/>
                 <outlet property="picViewWidthConst" destination="xwB-fs-79v" id="7Rz-Nq-L3Y"/>
+                <outlet property="retweetContentLabelTopConst" destination="lkw-cB-GfZ" id="5KY-9d-nnP"/>
+                <outlet property="retweetedBgView" destination="2q9-ql-PHD" id="CrT-fI-Bb3"/>
                 <outlet property="retweetedLabel" destination="7ZA-yE-pP4" id="3qk-Yw-mQv"/>
+                <outlet property="retweetedWidthConst" destination="06g-vG-2Hz" id="kow-IH-HhL"/>
                 <outlet property="sourceLabel" destination="vhS-JN-Eb7" id="l33-14-yC5"/>
                 <outlet property="verifiedImageView" destination="WWs-YA-QWo" id="288-J9-Wh9"/>
                 <outlet property="vipImageView" destination="lBd-rX-itD" id="q8n-PE-BZK"/>
             </connections>
-            <point key="canvasLocation" x="315.5" y="110"/>
+            <point key="canvasLocation" x="467" y="125"/>
         </tableViewCell>
     </objects>
     <resources>

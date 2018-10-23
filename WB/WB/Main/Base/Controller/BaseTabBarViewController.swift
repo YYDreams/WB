@@ -17,6 +17,10 @@ class BaseTabBarViewController: UITabBarController {
         setupViewControllers() //设置子控制器
 
         setupComposeBtn() // 设置中间加号按钮
+        
+        
+        self.selectedIndex = 3
+
     }
 }
 //MARK: 设置中间 + 按钮
@@ -40,6 +44,8 @@ extension BaseTabBarViewController{
  @objc  private func  composeOnClick(){
     
     print("composeOnClick")
+
+    present(BaseNavViewController(rootViewController: ComposeController()), animated: true, completion: nil)
 
     }
 }
@@ -70,6 +76,7 @@ extension BaseTabBarViewController{
             arrayM.append(addController(dic: dic))
         }
         viewControllers = arrayM
+        
     }
     //使用字段创建子控制器
     private func addController(dic:[String: String]) ->UIViewController{
@@ -92,6 +99,8 @@ extension BaseTabBarViewController{
         //字体大小 默认是12   要选择.normal 类型
         vc.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 15)], for: .normal)
         let nav = BaseNavViewController(rootViewController: vc)
+        
+        
         return nav
     }
 }

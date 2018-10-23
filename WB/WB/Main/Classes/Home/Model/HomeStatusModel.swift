@@ -47,13 +47,11 @@ class HomeStatusModel: BaseModel {
     var text: String?           // 正文
     var mid: Int = 0            //微博的ID  上拉或者下拉需要
     
+    var cellHeight: CGFloat = 0.0
     
     var user: HomeUserModel? //对应的用户
 
     var pic_urls:[[String: String]]? //微博的配图
-    
-   var retweeted_status: HomeStatusModel? //微博对应的转发微博
-    
     /**
      "pic_urls":[
      {
@@ -68,6 +66,9 @@ class HomeStatusModel: BaseModel {
      ],
      
      */
+
+   var retweeted_status: HomeStatusModel? //微博对应的转发微博
+    
 
     // MARK: 自定义构造函数
     init(dict: [String : AnyObject]) {
