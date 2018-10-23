@@ -26,6 +26,7 @@
 		9C4035ED2154EBCC00042526 /* WBNewFeatureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4035EC2154EBCC00042526 /* WBNewFeatureController.swift */; };
 		9C4035F22154EF3E00042526 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4035F02154EF3E00042526 /* WelcomeController.swift */; };
 		9C4035F32154EF3E00042526 /* WelcomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C4035F12154EF3E00042526 /* WelcomeController.xib */; };
+		9C534EBC217E1D9E00CEFEEE /* swift微博第1天(项目搭建及层次结构剖析).xmind in Resources */ = {isa = PBXBuildFile; fileRef = 9C534EBB217E1D9E00CEFEEE /* swift微博第1天(项目搭建及层次结构剖析).xmind */; };
 		9C96701C2154822100BFD21A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C966FE62154822000BFD21A /* Assets.xcassets */; };
 		9C96701D2154822100BFD21A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C966FEE2154822100BFD21A /* AppDelegate.swift */; };
 		9C96701E2154822100BFD21A /* BaseNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C966FF12154822100BFD21A /* BaseNavViewController.swift */; };
@@ -72,6 +73,7 @@
 		9C4035EC2154EBCC00042526 /* WBNewFeatureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNewFeatureController.swift; sourceTree = "<group>"; };
 		9C4035F02154EF3E00042526 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		9C4035F12154EF3E00042526 /* WelcomeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeController.xib; sourceTree = "<group>"; };
+		9C534EBB217E1D9E00CEFEEE /* swift微博第1天(项目搭建及层次结构剖析).xmind */ = {isa = PBXFileReference; lastKnownFileType = file; path = "swift微博第1天(项目搭建及层次结构剖析).xmind"; sourceTree = "<group>"; };
 		9C966FE62154822000BFD21A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C966FEE2154822100BFD21A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C966FF12154822100BFD21A /* BaseNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		9C966FE02154822000BFD21A /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				9C534EBB217E1D9E00CEFEEE /* swift微博第1天(项目搭建及层次结构剖析).xmind */,
 				9C4035CF2154975100042526 /* LaunchScreen.storyboard */,
 				9C4035D12154975100042526 /* Main.storyboard */,
 			);
@@ -644,6 +647,7 @@
 				9CB06321215CB3BB00ECCF5E /* HomeCell.xib in Resources */,
 				9C4035D32154975100042526 /* LaunchScreen.storyboard in Resources */,
 				9C4035DC2154ABF100042526 /* VisitorView.xib in Resources */,
+				9C534EBC217E1D9E00CEFEEE /* swift微博第1天(项目搭建及层次结构剖析).xmind in Resources */,
 				9C4035F32154EF3E00042526 /* WelcomeController.xib in Resources */,
 				9C96701C2154822100BFD21A /* Assets.xcassets in Resources */,
 				9C96702D2154898500BFD21A /* TabBar.json in Resources */,
