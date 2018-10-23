@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComposeController" customModule="WB" customModuleProvider="target">
             <connections>
                 <outlet property="composeTextView" destination="KA7-YM-wbp" id="mcJ-da-Lg7"/>
+                <outlet property="toolbarBottomConst" destination="dfM-Cj-NxG" id="K7v-fm-Xen"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -42,6 +43,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="compose_toolbar_picture"/>
                                 <state key="selected" image="compose_toolbar_picture_highlighted"/>
+                                <state key="highlighted" image="compose_toolbar_picture_highlighted"/>
                             </button>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="NXD-Kg-OCk"/>

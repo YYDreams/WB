@@ -12,6 +12,7 @@ class ComposeController: UIViewController {
 
     private lazy var  titleView:ComposeNavTitleView = ComposeNavTitleView()
 
+    @IBOutlet weak var toolbarBottomConst: NSLayoutConstraint!
     @IBOutlet weak var composeTextView: ComposeTextView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,22 @@ extension ComposeController{
     
     @objc  func keyboardWillChangeFrame(note:Notification){
         
+        //1获取动画执行时间
+        let duration = note.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
+        //2.获取键盘最终Y值
+        let endFrame = (note.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+     
+        let y = endFrame.origin.y
+       //3.计算工具栏距离底部的间距
+        let margin = screenH - y
+        
+        toolbarBottomConst.constant = margin
+        
+        UIView.animate(withDuration: duration) {
+            
+            self.view.layoutIfNeeded()
+
+        }
         print(note.userInfo ?? "xx")
         
     }
