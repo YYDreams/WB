@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7747C27FCF37762FC218988D /* Pods_WB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111ECA872715DFD1D28EF673 /* Pods_WB.framework */; };
 		78572884217DA00D0059D88B /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78572883217DA00D0059D88B /* BaseCell.swift */; };
-		7857954D217EAD2100B9243B /* swift微博第1天(项目搭建及层次结构剖析).xmind in Resources */ = {isa = PBXBuildFile; fileRef = 7857954C217EAD2100B9243B /* swift微博第1天(项目搭建及层次结构剖析).xmind */; };
 		78579550217EF66200B9243B /* ComposeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7857954E217EF66200B9243B /* ComposeController.swift */; };
 		78579551217EF66200B9243B /* ComposeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7857954F217EF66200B9243B /* ComposeController.xib */; };
 		78579553217EF8DF00B9243B /* ComposeNavTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78579552217EF8DF00B9243B /* ComposeNavTitleView.swift */; };
@@ -676,7 +675,6 @@
 				78579551217EF66200B9243B /* ComposeController.xib in Resources */,
 				9C4035D32154975100042526 /* LaunchScreen.storyboard in Resources */,
 				9C4035DC2154ABF100042526 /* VisitorView.xib in Resources */,
-				7857954D217EAD2100B9243B /* swift微博第1天(项目搭建及层次结构剖析).xmind in Resources */,
 				9C4035F32154EF3E00042526 /* WelcomeController.xib in Resources */,
 				9C96701C2154822100BFD21A /* Assets.xcassets in Resources */,
 				9C96702D2154898500BFD21A /* TabBar.json in Resources */,
