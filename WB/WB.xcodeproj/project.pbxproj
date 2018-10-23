@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7747C27FCF37762FC218988D /* Pods_WB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111ECA872715DFD1D28EF673 /* Pods_WB.framework */; };
 		78572884217DA00D0059D88B /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78572883217DA00D0059D88B /* BaseCell.swift */; };
+		7857954D217EAD2100B9243B /* swift微博第1天(项目搭建及层次结构剖析).xmind in Resources */ = {isa = PBXBuildFile; fileRef = 7857954C217EAD2100B9243B /* swift微博第1天(项目搭建及层次结构剖析).xmind */; };
 		789FBD1A217DB3E400DB14BE /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789FBD19217DB3E400DB14BE /* PicCollectionView.swift */; };
 		789FBD1D217DB80A00DB14BE /* PicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789FBD1B217DB80A00DB14BE /* PicCell.swift */; };
 		789FBD1E217DB80A00DB14BE /* PicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789FBD1C217DB80A00DB14BE /* PicCell.xib */; };
@@ -53,6 +54,7 @@
 		111ECA872715DFD1D28EF673 /* Pods_WB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		448D03FE8BDEF74B9E84C57A /* Pods-WB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WB.release.xcconfig"; path = "Pods/Target Support Files/Pods-WB/Pods-WB.release.xcconfig"; sourceTree = "<group>"; };
 		78572883217DA00D0059D88B /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		7857954C217EAD2100B9243B /* swift微博第1天(项目搭建及层次结构剖析).xmind */ = {isa = PBXFileReference; lastKnownFileType = file; path = "swift微博第1天(项目搭建及层次结构剖析).xmind"; sourceTree = "<group>"; };
 		789FBD19217DB3E400DB14BE /* PicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
 		789FBD1B217DB80A00DB14BE /* PicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicCell.swift; sourceTree = "<group>"; };
 		789FBD1C217DB80A00DB14BE /* PicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicCell.xib; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		9C966FE02154822000BFD21A /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				7857954C217EAD2100B9243B /* swift微博第1天(项目搭建及层次结构剖析).xmind */,
 				9C4035CF2154975100042526 /* LaunchScreen.storyboard */,
 				9C4035D12154975100042526 /* Main.storyboard */,
 			);
@@ -644,6 +647,7 @@
 				9CB06321215CB3BB00ECCF5E /* HomeCell.xib in Resources */,
 				9C4035D32154975100042526 /* LaunchScreen.storyboard in Resources */,
 				9C4035DC2154ABF100042526 /* VisitorView.xib in Resources */,
+				7857954D217EAD2100B9243B /* swift微博第1天(项目搭建及层次结构剖析).xmind in Resources */,
 				9C4035F32154EF3E00042526 /* WelcomeController.xib in Resources */,
 				9C96701C2154822100BFD21A /* Assets.xcassets in Resources */,
 				9C96702D2154898500BFD21A /* TabBar.json in Resources */,

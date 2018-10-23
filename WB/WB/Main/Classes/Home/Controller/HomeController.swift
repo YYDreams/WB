@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import MJRefresh
 private let HomeCellID = "HomeCellID"
 
 class HomeController: BaseTableViewController {
@@ -21,14 +22,51 @@ class HomeController: BaseTableViewController {
         setupNav()
         setupTableView()
     if !UserAccount.userLogin() { return}
-        
-       loadHomeStatusFromNetwork() //
-        
-        
+
+        setupRefresh()
         
     }
 }
+extension HomeController{
+    
+    
+    private func setupRefresh(){
+        
+        let header =  MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(loadNewData))
+        
+        
+        header?.setTitle("加载中", for: .idle)
+        header?.setTitle("释放中", for: .pulling)
 
+        tableView.mj_header = header
+        tableView.mj_header.beginRefreshing()
+        
+        let footer =  MJRefreshAutoFooter(refreshingTarget: self, refreshingAction: #selector(loadMoreData))
+        tableView.mj_footer = footer
+        
+    }
+    
+    
+    
+    @objc  func loadNewData(){
+        
+        print("loadNewData")
+        
+        loadHomeStatusFromNetwork(isNewData: true)
+
+    }
+    
+    
+    @objc  func loadMoreData(){
+        
+        print("loadMoreData")
+        
+        loadHomeStatusFromNetwork(isNewData: false)
+        
+    }
+    
+
+}
 
 //MARK: setupTableView
 extension HomeController{
@@ -37,7 +75,8 @@ extension HomeController{
         
         tableView.register(UINib(nibName: "HomeCell", bundle: nil), forCellReuseIdentifier: HomeCellID)
         //两个需要同时设置才起作用
-        tableView.rowHeight = UITableViewAutomaticDimension
+        //如果需要手动计算则需去除底部工具条的底部约束
+//        tableView.rowHeight = UITableViewAutomaticDimension  // 根据约束自动计算  如果需要手动计算 则需要去掉
         tableView.estimatedRowHeight = 200
 
         
@@ -58,8 +97,24 @@ extension HomeController{
 // MARK: loadFormNetwork
 extension HomeController{
     
-    private func   loadHomeStatusFromNetwork(){
-        HomeViewModel.loadStatusFromNetwork { (result, error) in
+    private func   loadHomeStatusFromNetwork(isNewData:Bool){
+        /**
+         since_id    若指定此参数，则返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0。
+         max_id  若指定此参数，则返回ID小于或等于max_id的微博，默认为0。
+         */
+        var since_id = 0
+        var max_id = 0
+        if isNewData {
+            since_id =  viewModel.first?.status?.mid ?? 0
+        }else{
+            
+            
+            max_id = viewModel.last?.status?.mid ?? 0 //没有值就传0
+            max_id =  max_id == 0 ? 0 : (max_id - 1)  //最后一条会重复 特殊处理一下
+        }
+        
+ 
+        HomeViewModel.loadStatusFromNetwork (since_id: since_id,max_id: max_id){ (result, error) in
             //1.错误校验
             if error != nil {
                 print("error:\(String(describing: error))")
@@ -72,17 +127,25 @@ extension HomeController{
                 return
             }
             //3.遍历对应的字典
+            var tempViewModel = [HomeViewModel]()
             for statusDict in resultArr{
                 
                 let statusModel = HomeStatusModel(dict: statusDict)
 //                self.statuses.append(statusModel)
                 let viewModel = HomeViewModel(status: statusModel)
-                self.viewModel.append(viewModel)
+                tempViewModel.append(viewModel)
                 
                 }
             
-            //缓存图片
-            self.cacheImags(viewModel: self.viewModel)
+            if isNewData{
+                self.viewModel = tempViewModel + self.viewModel
+
+            }else{
+                 self.viewModel += tempViewModel
+            }
+            
+            // 缓存图片
+            self.cacheImags(viewModel: tempViewModel) //缓存最新数据
 
 //            //4.刷新表格
 //          self.tableView.reloadData()
@@ -115,6 +178,9 @@ extension HomeController{
 
         group.notify(queue:DispatchQueue.main) {
             
+            self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
+            
             //4.刷新表格
             self.tableView.reloadData()
             print("刷新表格")
@@ -135,7 +201,12 @@ extension HomeController{
     let cell = tableView.dequeueReusableCell(withIdentifier: HomeCellID) as! HomeCell
      cell.viewModel = viewModel[indexPath.row]
     return cell
+
+    }
+   override  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
+        
+        return viewModel[indexPath.row].cellHeight
         
     }
 

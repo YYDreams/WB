@@ -25,7 +25,7 @@ class HomeViewModel: NSObject {
     
     var pirUrls: [NSURL] = [NSURL]() //处理微博配图数据
     
-    
+    var cellHeight: CGFloat = 0
     //自定义构造函数
     init(status : HomeStatusModel) {
         
@@ -47,7 +47,6 @@ class HomeViewModel: NSObject {
             //2.2 截取字符串
             sourceText = (source as NSString).substring(with: NSRange(location: startIndex, length: length))
 
-            
         }
         
         //2>  处理时间
@@ -79,7 +78,8 @@ class HomeViewModel: NSObject {
         }
         
         //5> 处理微博配图数据
-        if let picUrlDicts = status.pic_urls {
+        let  picUrlDicts = status.pic_urls?.count != 0 ? status.pic_urls : status.retweeted_status?.pic_urls
+        if let picUrlDicts = picUrlDicts{
             for picUrlDic  in picUrlDicts {
                 
             guard  let picUrlStr = picUrlDic["thumbnail_pic"] else {
@@ -89,26 +89,23 @@ class HomeViewModel: NSObject {
                 }
                 //到这步是一定有值的  可以强制解包
                 pirUrls.append(NSURL(string:picUrlStr)!)
-
             }
-            
         }
-
     }
-    
 }
 
 //MARK: request Data
 extension HomeViewModel {
-    
-    
+
     /**
-     [[String :AnyObject]]   数组类型 且数组里面存放的是字典
+     [[String :AnyObject]]   数组字典类型 且数组里面存放的是字典
+     
+     since_id: 最新数据   max_id 更多数据
      */
     
-    class  func loadStatusFromNetwork(findished:@escaping ( _ result:[[String :AnyObject]]? ,_ error: Error?)->()){
+    class  func loadStatusFromNetwork(since_id : Int ,max_id: Int,findished:@escaping ( _ result:[[String :AnyObject]]? ,_ error: Error?)->()){
         
-        let param = ["access_token":(UserAccount.loadAccount()?.access_token)!]
+        let param = ["access_token":(UserAccount.loadAccount()?.access_token)!,"since_id":"\(since_id)","max_id":"\(max_id)"]
         
         NetworkTool.shareNetworkTool().request(methodType: .GET, urlString: kStatusesHomeUrl, parameters: param as [String : AnyObject]) { (result, error) in
             

@@ -30,13 +30,22 @@ class HomeCell: BaseCell {
     
      //转发微博的文字
     @IBOutlet weak var retweetedLabel: UILabel!
+    //转发微博的文字宽度
+    @IBOutlet weak var retweetedWidthConst: NSLayoutConstraint!
+    //转发微博的背景
+    @IBOutlet weak var retweetedBgView: UIView!
     //collectionView
     @IBOutlet weak var collectionView: PicCollectionView!
     // 配图的高度
     @IBOutlet weak var picViewHeightConst: NSLayoutConstraint!
+    //collectionView底部距离底部工具栏的间距
+    @IBOutlet weak var picViewBottomConst: NSLayoutConstraint!
     // 配图的宽度
     @IBOutlet weak var picViewWidthConst: NSLayoutConstraint!
-    
+    //转发微博正文距离顶部的距离
+    @IBOutlet weak var retweetContentLabelTopConst: NSLayoutConstraint!
+    // 底部工具条的View
+    @IBOutlet weak var bottomView: UIView!
     //
     var viewModel: HomeViewModel? {
         
@@ -57,6 +66,7 @@ class HomeCell: BaseCell {
             
             //2.3 昵称
             nameLabel.text = viewModel.status?.user?.screen_name
+            
             nameLabel.textColor = (viewModel.vipImage == nil) ? UIColor.black : UIColor.orange
             
             //2.4 会员图标
@@ -64,7 +74,12 @@ class HomeCell: BaseCell {
             //2.5 时间
              created_atLabel.text = viewModel.created_atText
             //2.6 来源
-            sourceLabel.text = viewModel.sourceText
+            if let sourceText = viewModel.sourceText {
+            sourceLabel.text = "来自 " + sourceText
+            }else{
+                sourceLabel.text = nil //防止循环利用
+            }
+            
             
             //2.7  正文
             contentTextLabel.text = viewModel.status?.text
@@ -81,20 +96,35 @@ class HomeCell: BaseCell {
             //2.9 设置转发微博的正文
             if viewModel.status?.retweeted_status != nil {
                 
-                retweetedLabel.text = viewModel.status?.retweeted_status?.text
-                
+                if let screenName = viewModel.status?.retweeted_status?.user?.screen_name,
+                   let retweetedText = viewModel.status?.retweeted_status?.text {
+                    retweetContentLabelTopConst.constant = 10
+                    retweetedLabel.text = "@" + "\(screenName)" + retweetedText
+                    
+                    retweetedBgView.isHidden = false
+                }
             } else{
                 retweetedLabel.text = nil
+                retweetedBgView.isHidden = true
+                //无转发微博 则设置为 0
+                retweetContentLabelTopConst.constant = 0
+            }
+
+            //注意：如需手动计算 则需要去除底部约束
+            if viewModel.cellHeight == 0 {  // 如果从没有计算过 才需要计算
+                   layoutIfNeeded()
+           viewModel.cellHeight = (bottomView.frame).maxY  //手动计算cell的高度 并将高度保存到viewModel模型中
             }
 
         }
-        
+
     }
     override func awakeFromNib() {
         super.awakeFromNib()
 
         //设置正文的约束
        contentWidthConst.constant = screenW - 2 * magin
+        retweetedWidthConst.constant = screenW - 2 * magin
         
         // 单张图片需要特殊处理 则统一在 calculatePicViewSize进行处理
 //       // 取出picView对应的layout
@@ -128,9 +158,12 @@ extension HomeCell{
         
         //1.没有配图
         if count == 0 {
+            picViewBottomConst.constant = 0
+
             return CGSize(width: 0, height: 0)
         }
-        
+        //有配图下改约束
+        picViewBottomConst.constant = 10
         // 取出picView对应的layout
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
 
