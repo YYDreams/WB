@@ -16,6 +16,7 @@ class HomeController: BaseTableViewController {
     //懒加载数组
 //    private lazy var statuses: [HomeStatusModel] = [HomeStatusModel]()
     private lazy var viewModel: [HomeViewModel] = [HomeViewModel]()
+    private lazy var tipLabel: UILabel = UILabel() //
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,29 +26,27 @@ class HomeController: BaseTableViewController {
 
         setupRefresh()
         
+        setupTipLabel()
+        
     }
 }
+
+//MARK: setupRefresh
 extension HomeController{
     
     
     private func setupRefresh(){
         
-        let header =  MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(loadNewData))
+        tableView.mj_header =  MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(loadNewData))
+//        header?.setTitle("下拉刷新", for: .idle)
+//        header?.setTitle("释放刷新", for: .pulling)
+//        header?.setTitle("加载中", for: .refreshing)
+        tableView.mj_footer =  MJRefreshAutoFooter(refreshingTarget: self, refreshingAction: #selector(loadMoreData))
         
-        
-        header?.setTitle("加载中", for: .idle)
-        header?.setTitle("释放中", for: .pulling)
-
-        tableView.mj_header = header
         tableView.mj_header.beginRefreshing()
-        
-        let footer =  MJRefreshAutoFooter(refreshingTarget: self, refreshingAction: #selector(loadMoreData))
-        tableView.mj_footer = footer
-        
+
     }
-    
-    
-    
+
     @objc  func loadNewData(){
         
         print("loadNewData")
@@ -55,9 +54,7 @@ extension HomeController{
         loadHomeStatusFromNetwork(isNewData: true)
 
     }
-    
-    
-    @objc  func loadMoreData(){
+  @objc  func loadMoreData(){
         
         print("loadMoreData")
         
@@ -82,6 +79,22 @@ extension HomeController{
         
 //        //取消分割线
         tableView.separatorStyle = .none
+        
+    }
+    
+    private func setupTipLabel(){
+        /**
+           注意： 这里的view 和tablView指向的是一个对象  为了不让他跟随tableView一起滚动的话  可以加navigationController?.navigationBar
+         */
+        navigationController?.navigationBar.insertSubview(tipLabel, at: 0)
+//        view.addSubview(tipLabel)
+        tipLabel.frame = CGRect(x: 0, y: 10, width: screenW, height: 30)
+        tipLabel.backgroundColor = UIColor.orange
+        tipLabel.textColor = UIColor.white
+        tipLabel.isHidden = true
+        tipLabel.textAlignment = .center
+        
+        
         
     }
 }
@@ -147,7 +160,7 @@ extension HomeController{
             // 缓存图片
             self.cacheImags(viewModel: tempViewModel) //缓存最新数据
 
-//            //4.刷新表格
+
 //          self.tableView.reloadData()
         
         }
@@ -177,14 +190,37 @@ extension HomeController{
         }
 
         group.notify(queue:DispatchQueue.main) {
+          
+            self.tableView.reloadData()
             
             self.tableView.mj_header.endRefreshing()
             self.tableView.mj_footer.endRefreshing()
-            
-            //4.刷新表格
-            self.tableView.reloadData()
+
             print("刷新表格")
+            self.showTipLabel(count: viewModel.count)
         
+        }
+    }
+    
+    
+    private func showTipLabel(count: Int){
+     
+        self.tipLabel.isHidden = false
+        
+        self.tipLabel.text = count == 0 ? "没有新数据": "\(count)" + "新微博"
+        
+        UIView.animate(withDuration: 1, animations: {
+            self.tipLabel.frame.origin.y = 44
+        }) { (_) in
+            //delay 停留1.5秒
+            UIView.animate(withDuration: 1, delay: 1.5, options: [], animations: {
+                
+                self.tipLabel.frame.origin.y = 10
+
+            }, completion: { (_) in
+                self.tipLabel.isHidden = true
+
+            })
         }
     }
     
