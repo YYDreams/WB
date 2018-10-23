@@ -41,6 +41,8 @@ extension BaseTabBarViewController{
     
     print("composeOnClick")
 
+    present(BaseNavViewController(rootViewController: ComposeController()), animated: true, completion: nil)
+
     }
 }
 //MARK: 设置子控制器

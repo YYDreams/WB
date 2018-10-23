@@ -38,9 +38,7 @@ extension HomeController{
     private func setupRefresh(){
         
         tableView.mj_header =  MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(loadNewData))
-//        header?.setTitle("下拉刷新", for: .idle)
-//        header?.setTitle("释放刷新", for: .pulling)
-//        header?.setTitle("加载中", for: .refreshing)
+
         tableView.mj_footer =  MJRefreshAutoFooter(refreshingTarget: self, refreshingAction: #selector(loadMoreData))
         
         tableView.mj_header.beginRefreshing()
@@ -76,8 +74,6 @@ extension HomeController{
 //        tableView.rowHeight = UITableViewAutomaticDimension  // 根据约束自动计算  如果需要手动计算 则需要去掉
         tableView.estimatedRowHeight = 200
 
-        
-//        //取消分割线
         tableView.separatorStyle = .none
         
     }
