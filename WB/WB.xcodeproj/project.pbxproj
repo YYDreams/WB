@@ -13,6 +13,7 @@
 		78579550217EF66200B9243B /* ComposeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7857954E217EF66200B9243B /* ComposeController.swift */; };
 		78579551217EF66200B9243B /* ComposeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7857954F217EF66200B9243B /* ComposeController.xib */; };
 		78579553217EF8DF00B9243B /* ComposeNavTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78579552217EF8DF00B9243B /* ComposeNavTitleView.swift */; };
+		7857955B217F031700B9243B /* ComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7857955A217F031700B9243B /* ComposeTextView.swift */; };
 		789FBD1A217DB3E400DB14BE /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789FBD19217DB3E400DB14BE /* PicCollectionView.swift */; };
 		789FBD1D217DB80A00DB14BE /* PicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789FBD1B217DB80A00DB14BE /* PicCell.swift */; };
 		789FBD1E217DB80A00DB14BE /* PicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789FBD1C217DB80A00DB14BE /* PicCell.xib */; };
@@ -61,6 +62,7 @@
 		7857954F217EF66200B9243B /* ComposeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComposeController.xib; sourceTree = "<group>"; };
 		78579552217EF8DF00B9243B /* ComposeNavTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComposeNavTitleView.swift; path = WB/Main/Classes/Compose/View/ComposeNavTitleView.swift; sourceTree = SOURCE_ROOT; };
 		78579554217EFB2100B9243B /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7857955A217F031700B9243B /* ComposeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeTextView.swift; sourceTree = "<group>"; };
 		789FBD19217DB3E400DB14BE /* PicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
 		789FBD1B217DB80A00DB14BE /* PicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicCell.swift; sourceTree = "<group>"; };
 		789FBD1C217DB80A00DB14BE /* PicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicCell.xib; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				78579552217EF8DF00B9243B /* ComposeNavTitleView.swift */,
+				7857955A217F031700B9243B /* ComposeTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -739,6 +742,7 @@
 				9C4035D621549AB900042526 /* UIButton+Extension.swift in Sources */,
 				9C9670222154822100BFD21A /* BaseModel.swift in Sources */,
 				78572884217DA00D0059D88B /* BaseCell.swift in Sources */,
+				7857955B217F031700B9243B /* ComposeTextView.swift in Sources */,
 				9C9670252154822100BFD21A /* MessageController.swift in Sources */,
 				9C4035EA2154D8D500042526 /* UserAccount.swift in Sources */,
 				9CB06320215CB3BB00ECCF5E /* HomeCell.swift in Sources */,

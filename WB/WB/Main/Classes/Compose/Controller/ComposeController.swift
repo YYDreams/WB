@@ -12,17 +12,52 @@ class ComposeController: UIViewController {
 
     private lazy var  titleView:ComposeNavTitleView = ComposeNavTitleView()
 
+    @IBOutlet weak var composeTextView: ComposeTextView!
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        composeTextView.delegate = self
         setupNav()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
         
+
     }
 
-
+    
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        composeTextView.becomeFirstResponder()
+    }
 }
 
+extension ComposeController{
+    
+      
+    
+    @objc  func keyboardWillChangeFrame(note:Notification){
+        
+        print(note.userInfo ?? "xx")
+        
+    }
+    
+ 
+}
 
+extension ComposeController:UITextViewDelegate {
+    
+    func textViewDidChange(_ textView: UITextView) {
+        // hasText 如果值是 null， ""，都返回 false，否则返回true    返回为true包含文本 返回为false不包含文本。
+        composeTextView.placeHolderLabel.isHidden = textView.hasText
+        navigationItem.rightBarButtonItem?.isEnabled = textView.hasText
+        
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        composeTextView.resignFirstResponder()
+    }
+    
+}
 extension ComposeController{
     
     private func setupNav(){
@@ -53,3 +88,4 @@ extension ComposeController{
     }
     
 }
+
