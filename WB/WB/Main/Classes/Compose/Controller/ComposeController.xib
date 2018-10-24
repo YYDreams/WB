@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComposeController" customModule="WB" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="Euu-Kb-65X" id="o9V-Ed-cJq"/>
+                <outlet property="collectionViewHeightConst" destination="8hZ-Bn-Zms" id="cO3-dU-pIC"/>
                 <outlet property="composeTextView" destination="KA7-YM-wbp" id="mcJ-da-Lg7"/>
                 <outlet property="toolbarBottomConst" destination="dfM-Cj-NxG" id="K7v-fm-Xen"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -27,9 +29,22 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <connections>
-                        <outlet property="delegate" destination="i5M-Pr-FkT" id="wc6-zY-hEq"/>
+                        <outlet property="delegate" destination="-1" id="pi2-Uf-MYN"/>
                     </connections>
                 </textView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Euu-Kb-65X" customClass="SelectPhotoCollectionView" customModule="WB" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="623" width="375" height="0.0"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="8hZ-Bn-Zms"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nfA-Tq-viA">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RKC-Yd-ZS7">
                     <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                     <constraints>
@@ -44,6 +59,9 @@
                                 <state key="normal" image="compose_toolbar_picture"/>
                                 <state key="selected" image="compose_toolbar_picture_highlighted"/>
                                 <state key="highlighted" image="compose_toolbar_picture_highlighted"/>
+                                <connections>
+                                    <action selector="photoOnClick" destination="-1" eventType="touchUpInside" id="Yxi-t5-3lX"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="NXD-Kg-OCk"/>
@@ -90,8 +108,11 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="KA7-YM-wbp" secondAttribute="trailing" id="AKa-UT-5VP"/>
+                <constraint firstAttribute="trailing" secondItem="Euu-Kb-65X" secondAttribute="trailing" id="Q1p-ce-WSb"/>
+                <constraint firstItem="Euu-Kb-65X" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XqP-ed-UK0"/>
                 <constraint firstItem="KA7-YM-wbp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZZS-bw-cIk"/>
                 <constraint firstAttribute="bottom" secondItem="RKC-Yd-ZS7" secondAttribute="bottom" id="dfM-Cj-NxG"/>
+                <constraint firstItem="RKC-Yd-ZS7" firstAttribute="top" secondItem="Euu-Kb-65X" secondAttribute="bottom" id="hiT-Qc-zfI"/>
                 <constraint firstItem="KA7-YM-wbp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mRC-J7-ZJj"/>
                 <constraint firstAttribute="trailing" secondItem="RKC-Yd-ZS7" secondAttribute="trailing" id="uET-bg-Tai"/>
                 <constraint firstAttribute="bottom" secondItem="KA7-YM-wbp" secondAttribute="bottom" id="yJA-ad-aob"/>

@@ -13,6 +13,10 @@
 		78579551217EF66200B9243B /* ComposeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7857954F217EF66200B9243B /* ComposeController.xib */; };
 		78579553217EF8DF00B9243B /* ComposeNavTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78579552217EF8DF00B9243B /* ComposeNavTitleView.swift */; };
 		7857955B217F031700B9243B /* ComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7857955A217F031700B9243B /* ComposeTextView.swift */; };
+		789740E421800CA500801AA6 /* SelectPhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789740E321800CA500801AA6 /* SelectPhotoCollectionView.swift */; };
+		789740E72180130E00801AA6 /* SelectPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789740E52180130E00801AA6 /* SelectPhotoCell.swift */; };
+		789740E82180130E00801AA6 /* SelectPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789740E62180130E00801AA6 /* SelectPhotoCell.xib */; };
+		789740EB2180459300801AA6 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789740EA2180459300801AA6 /* ImagePickerController.swift */; };
 		789FBD1A217DB3E400DB14BE /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789FBD19217DB3E400DB14BE /* PicCollectionView.swift */; };
 		789FBD1D217DB80A00DB14BE /* PicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789FBD1B217DB80A00DB14BE /* PicCell.swift */; };
 		789FBD1E217DB80A00DB14BE /* PicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789FBD1C217DB80A00DB14BE /* PicCell.xib */; };
@@ -62,6 +66,10 @@
 		78579552217EF8DF00B9243B /* ComposeNavTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComposeNavTitleView.swift; path = WB/Main/Classes/Compose/View/ComposeNavTitleView.swift; sourceTree = SOURCE_ROOT; };
 		78579554217EFB2100B9243B /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7857955A217F031700B9243B /* ComposeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeTextView.swift; sourceTree = "<group>"; };
+		789740E321800CA500801AA6 /* SelectPhotoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoCollectionView.swift; sourceTree = "<group>"; };
+		789740E52180130E00801AA6 /* SelectPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoCell.swift; sourceTree = "<group>"; };
+		789740E62180130E00801AA6 /* SelectPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPhotoCell.xib; sourceTree = "<group>"; };
+		789740EA2180459300801AA6 /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
 		789FBD19217DB3E400DB14BE /* PicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
 		789FBD1B217DB80A00DB14BE /* PicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicCell.swift; sourceTree = "<group>"; };
 		789FBD1C217DB80A00DB14BE /* PicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicCell.xib; sourceTree = "<group>"; };
@@ -136,8 +144,19 @@
 			children = (
 				78579552217EF8DF00B9243B /* ComposeNavTitleView.swift */,
 				7857955A217F031700B9243B /* ComposeTextView.swift */,
+				789740E321800CA500801AA6 /* SelectPhotoCollectionView.swift */,
+				789740E52180130E00801AA6 /* SelectPhotoCell.swift */,
+				789740E62180130E00801AA6 /* SelectPhotoCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		789740E92180456900801AA6 /* ComposeSubModule */ = {
+			isa = PBXGroup;
+			children = (
+				789740EA2180459300801AA6 /* ImagePickerController.swift */,
+			);
+			path = ComposeSubModule;
 			sourceTree = "<group>";
 		};
 		9C3B94F021547FCD001D65C9 = {
@@ -536,49 +555,10 @@
 		9C9670132154822100BFD21A /* Public */ = {
 			isa = PBXGroup;
 			children = (
-				9C9670142154822100BFD21A /* ComposeSubModule */,
-				9C9670152154822100BFD21A /* DiscoverSubModule */,
-				9C9670162154822100BFD21A /* HomeSubModule */,
-				9C9670172154822100BFD21A /* MessageSubModule */,
-				9C9670182154822100BFD21A /* MineSubModule */,
+				789740E92180456900801AA6 /* ComposeSubModule */,
 				9C9670192154822100BFD21A /* Other */,
 			);
 			path = Public;
-			sourceTree = "<group>";
-		};
-		9C9670142154822100BFD21A /* ComposeSubModule */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ComposeSubModule;
-			sourceTree = "<group>";
-		};
-		9C9670152154822100BFD21A /* DiscoverSubModule */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DiscoverSubModule;
-			sourceTree = "<group>";
-		};
-		9C9670162154822100BFD21A /* HomeSubModule */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HomeSubModule;
-			sourceTree = "<group>";
-		};
-		9C9670172154822100BFD21A /* MessageSubModule */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MessageSubModule;
-			sourceTree = "<group>";
-		};
-		9C9670182154822100BFD21A /* MineSubModule */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MineSubModule;
 			sourceTree = "<group>";
 		};
 		9C9670192154822100BFD21A /* Other */ = {
@@ -670,6 +650,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				789740E82180130E00801AA6 /* SelectPhotoCell.xib in Resources */,
 				789FBD1E217DB80A00DB14BE /* PicCell.xib in Resources */,
 				9CB06321215CB3BB00ECCF5E /* HomeCell.xib in Resources */,
 				78579551217EF66200B9243B /* ComposeController.xib in Resources */,
@@ -754,10 +735,13 @@
 				9CB06320215CB3BB00ECCF5E /* HomeCell.swift in Sources */,
 				9C9670272154822100BFD21A /* TestViewController.swift in Sources */,
 				789FBD1A217DB3E400DB14BE /* PicCollectionView.swift in Sources */,
+				789740EB2180459300801AA6 /* ImagePickerController.swift in Sources */,
+				789740E72180130E00801AA6 /* SelectPhotoCell.swift in Sources */,
 				9C9670212154822100BFD21A /* BaseUIViewController.swift in Sources */,
 				9CB06323215CB41F00ECCF5E /* HomeViewModel.swift in Sources */,
 				9C96701D2154822100BFD21A /* AppDelegate.swift in Sources */,
 				9CB0631D215CA21B00ECCF5E /* HomeUserModel.swift in Sources */,
+				789740E421800CA500801AA6 /* SelectPhotoCollectionView.swift in Sources */,
 				9C96701E2154822100BFD21A /* BaseNavViewController.swift in Sources */,
 				9CB06319215C6A5E00ECCF5E /* HomeStatusModel.swift in Sources */,
 				9C9670202154822100BFD21A /* BaseTableViewController.swift in Sources */,

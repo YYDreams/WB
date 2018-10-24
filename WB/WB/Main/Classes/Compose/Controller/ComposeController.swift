@@ -11,27 +11,102 @@ import UIKit
 class ComposeController: UIViewController {
 
     private lazy var  titleView:ComposeNavTitleView = ComposeNavTitleView()
+    
+    private lazy var images:[UIImage] = [UIImage]()
 
     @IBOutlet weak var toolbarBottomConst: NSLayoutConstraint!
+    
     @IBOutlet weak var composeTextView: ComposeTextView!
+    
+    @IBOutlet weak var collectionView: SelectPhotoCollectionView!
+    
+    @IBOutlet weak var collectionViewHeightConst: NSLayoutConstraint!
+    //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        composeTextView.delegate = self
         setupNav()
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-        
+       
+        setuoNotifactionCenter()
+   }
 
-    }
-
+ 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         composeTextView.becomeFirstResponder()
     }
 }
 
+//MARK: setuoNotifactionCenter Method
 extension ComposeController{
     
-      
+    private func setuoNotifactionCenter(){
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showPhotoOnClick), name: NSNotification.Name(kSelectPhotoNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(delelePhotoOnClick), name: NSNotification.Name(kDeletePhotoNotification), object: nil)
+
+     
+    }
+    
+//    deinit {
+//        NotificationCenter.default.removeObserver(self)
+//    }
+    
+}
+
+extension  ComposeController:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        print("info:\(info)")
+        
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        images.append(image)
+        
+        collectionView.images = images
+        
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+//MARK: SEL Method
+extension ComposeController{
+    @objc func delelePhotoOnClick(noti: Notification){
+        
+        print("noti:\(String(describing: noti.object))")
+        
+        guard let image = noti.object as? UIImage else {
+            
+            return
+            
+        }
+        
+        guard let index = images.index(of: image) else {
+           
+            return
+        }
+        
+        images.remove(at: index)
+        
+        collectionView.images = images
+        
+    }
+    @objc func showPhotoOnClick(){
+        print("showPhotoView")
+   
+        if !UIImagePickerController.isSourceTypeAvailable(.photoLibrary){ return}
+                
+        let pickerVC = UIImagePickerController()
+        pickerVC.sourceType = .photoLibrary
+        pickerVC.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+
+        present(pickerVC, animated: true, completion: nil)
+
+    }
+    
     
     @objc  func keyboardWillChangeFrame(note:Notification){
         
@@ -55,23 +130,33 @@ extension ComposeController{
         
     }
     
- 
-}
-
-extension ComposeController:UITextViewDelegate {
+    @objc  private func gobackOnClick(){
+        
+        dismiss(animated: true, completion: nil)
+    }
     
-    func textViewDidChange(_ textView: UITextView) {
-        // hasText 如果值是 null， ""，都返回 false，否则返回true    返回为true包含文本 返回为false不包含文本。
-        composeTextView.placeHolderLabel.isHidden = textView.hasText
-        navigationItem.rightBarButtonItem?.isEnabled = textView.hasText
+    @objc  private func sendOnClick(){
+        
+        print("send ")
         
     }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+    @IBAction func photoOnClick() {
+        
+        
+        collectionViewHeightConst.constant = screenH * 0.65
+        
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
         composeTextView.resignFirstResponder()
+        
     }
-    
+
+
 }
+
+//MARK: setupNav
 extension ComposeController{
     
     private func setupNav(){
@@ -85,20 +170,23 @@ extension ComposeController{
         
         titleView.frame = CGRect(x: 0, y: 0, width: screenW, height: 40)
         navigationItem.titleView = titleView
+
+    }
+
+}
+
+//MARK: UITextViewDelegate
+extension ComposeController:UITextViewDelegate {
+    
+    func textViewDidChange(_ textView: UITextView) {
+        // hasText 如果值是 null， ""，都返回 false，否则返回true    返回为true包含文本 返回为false不包含文本。
+        composeTextView.placeHolderLabel.isHidden = textView.hasText
+        navigationItem.rightBarButtonItem?.isEnabled = textView.hasText
         
-      
     }
     
-    
-    @objc  private func gobackOnClick(){
-        
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @objc  private func sendOnClick(){
-        
-        print("send ")
-        
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        composeTextView.resignFirstResponder()
     }
     
 }

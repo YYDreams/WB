@@ -59,8 +59,6 @@ extension HomeController{
         loadHomeStatusFromNetwork(isNewData: false)
         
     }
-    
-
 }
 
 //MARK: setupTableView

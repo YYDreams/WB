@@ -32,3 +32,8 @@ let passwd = "flowerflower"
 
 //登录成功
 let kLoginSuccessNotification  = "kLoginSuccessNotification"
+// 选择照片弹窗
+let kSelectPhotoNotification  = "kSelectPhotoNotification"
+
+//删除图片
+let kDeletePhotoNotification  = "kDeletePhotoNotification"
