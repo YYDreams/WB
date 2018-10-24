@@ -42,8 +42,13 @@ extension BaseTableViewController{
     
     
     private func setupNav(){
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(registOnClick))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(loginOnClick))
+        
+        if !UserAccount.userLogin() {
+            
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(registOnClick))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(loginOnClick))
+            
+        }
     }
     
     func  setupVisitorView(){

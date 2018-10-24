@@ -19,7 +19,7 @@ class BaseTabBarViewController: UITabBarController {
         setupComposeBtn() // 设置中间加号按钮
         
         
-        self.selectedIndex = 3
+      selectedIndex = 3
 
     }
 }

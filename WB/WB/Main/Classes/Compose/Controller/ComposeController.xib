@@ -89,6 +89,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="compose_toolbar_picture"/>
                                 <state key="selected" image="compose_toolbar_picture_highlighted"/>
+                                <connections>
+                                    <action selector="emoiconBtnOnClick" destination="-1" eventType="touchUpInside" id="Gpy-wX-YGk"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="pRl-sf-z3X"/>

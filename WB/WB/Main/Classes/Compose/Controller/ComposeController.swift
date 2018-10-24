@@ -21,15 +21,17 @@ class ComposeController: UIViewController {
     @IBOutlet weak var collectionView: SelectPhotoCollectionView!
     
     @IBOutlet weak var collectionViewHeightConst: NSLayoutConstraint!
+    
     //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupNav()
        
         setuoNotifactionCenter()
    }
 
- 
+  
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         composeTextView.becomeFirstResponder()
@@ -54,27 +56,10 @@ extension ComposeController{
     
 }
 
-extension  ComposeController:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        print("info:\(info)")
-        
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        
-        images.append(image)
-        
-        collectionView.images = images
-        
-        
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-}
 
 //MARK: SEL Method
 extension ComposeController{
-    @objc func delelePhotoOnClick(noti: Notification){
+    @objc  private func delelePhotoOnClick(noti: Notification){
         
         print("noti:\(String(describing: noti.object))")
         
@@ -94,7 +79,7 @@ extension ComposeController{
         collectionView.images = images
         
     }
-    @objc func showPhotoOnClick(){
+    @objc  private func showPhotoOnClick(){
         print("showPhotoView")
    
         if !UIImagePickerController.isSourceTypeAvailable(.photoLibrary){ return}
@@ -108,7 +93,7 @@ extension ComposeController{
     }
     
     
-    @objc  func keyboardWillChangeFrame(note:Notification){
+    @objc  private func keyboardWillChangeFrame(note:Notification){
         
         //1获取动画执行时间
         let duration = note.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
@@ -152,6 +137,14 @@ extension ComposeController{
         composeTextView.resignFirstResponder()
         
     }
+    @IBAction func emoiconBtnOnClick() {
+        
+        composeTextView.inputView =  (composeTextView.inputView != nil) ? nil : UISwitch()
+        
+        composeTextView.resignFirstResponder()
+        
+    }
+    
 
 
 }
@@ -187,6 +180,25 @@ extension ComposeController:UITextViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         composeTextView.resignFirstResponder()
+    }
+    
+}
+
+//MARK: UIImagePickerControllerDelegate,UINavigationControllerDelegate
+extension  ComposeController:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        print("info:\(info)")
+        
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        images.append(image)
+        
+        collectionView.images = images
+        
+        
+        picker.dismiss(animated: true, completion: nil)
     }
     
 }

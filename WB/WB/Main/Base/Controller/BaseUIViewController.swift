@@ -18,9 +18,7 @@ class BaseUIViewController: UIViewController {
         
         
     }
-    
-        
-        
+
     @objc private func loginSuccess(noity:Notification){
 
         print("noity\(noity)")
