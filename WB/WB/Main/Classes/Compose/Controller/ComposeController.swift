@@ -50,6 +50,7 @@ extension ComposeController{
      
     }
     
+   
 //    deinit {
 //        NotificationCenter.default.removeObserver(self)
 //    }
@@ -201,5 +202,7 @@ extension  ComposeController:UIImagePickerControllerDelegate,UINavigationControl
         picker.dismiss(animated: true, completion: nil)
     }
     
+  
 }
+
 
