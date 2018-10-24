@@ -545,6 +545,7 @@
 		9C9670132154822100BFD21A /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				9CC1993C2180AF4F008970A9 /* ComposeSubModule */,
 				9C9670192154822100BFD21A /* Other */,
 			);
 			path = Public;
@@ -567,6 +568,13 @@
 				9C96702C2154898500BFD21A /* TabBar.json */,
 			);
 			path = json;
+			sourceTree = "<group>";
+		};
+		9CC1993C2180AF4F008970A9 /* ComposeSubModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ComposeSubModule;
 			sourceTree = "<group>";
 		};
 		E8A5FDF015C76999349CD25C /* Pods */ = {
