@@ -147,9 +147,10 @@ extension ComposeController{
     }
     @IBAction func emoiconBtnOnClick() {
         
-        composeTextView.inputView =  (composeTextView.inputView != nil) ? nil : UISwitch()
-        
         composeTextView.resignFirstResponder()
+
+        composeTextView.inputView =  (composeTextView.inputView != nil) ? nil : UISwitch()
+        composeTextView.becomeFirstResponder()
         
     }
     
