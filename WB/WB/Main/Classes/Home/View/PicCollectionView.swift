@@ -33,14 +33,15 @@ extension PicCollectionView {
     private func  setupCollectionView(){
         
         dataSource = self
-
+        delegate  = self
+        
         register(UINib(nibName: "PicCell", bundle: nil), forCellWithReuseIdentifier: PicCellID)
         
     }
 
 }
 //MARK: UICollectionViewDataSource
-extension PicCollectionView: UICollectionViewDataSource{
+extension PicCollectionView: UICollectionViewDataSource,UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return picUrls.count
@@ -54,7 +55,16 @@ extension PicCollectionView: UICollectionViewDataSource{
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        print("indexPath\(indexPath)")
+        let userInfo = [kHomeShowPhotoBrowserIndexKey: indexPath,kHomeShowPhotoBrowserUrlKey:picUrls] as [String : Any]
+        NotificationCenter.default.post(name: Notification.Name(kHomePhotoSelectItemNotification), object: nil, userInfo: userInfo)
+        
+    }
 
+    
+    
 }
 
 

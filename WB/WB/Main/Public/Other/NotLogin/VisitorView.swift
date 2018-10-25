@@ -43,7 +43,7 @@ class VisitorView: UIView {
         //2.设置动画的属性
         rotationAnomation.fromValue = 0 //开始位置
         
-        rotationAnomation.toValue =  M_PI * 2
+        rotationAnomation.toValue =  Double.pi * 2
         rotationAnomation.duration = 5
         rotationAnomation.repeatCount = MAXFLOAT
         //默认为YES 如果不设置这个 去到别的地方再回来 则不转了

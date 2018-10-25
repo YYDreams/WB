@@ -28,12 +28,25 @@ let passwd = "flowerflower"
 
 
 
-/***************************** 通知 *******************************/
+/***************************** Notification *******************************/
 
-//登录成功
+//login Success
 let kLoginSuccessNotification  = "kLoginSuccessNotification"
-// 选择照片弹窗
+// select Photo
 let kSelectPhotoNotification  = "kSelectPhotoNotification"
 
-//删除图片
+//delete Photo
 let kDeletePhotoNotification  = "kDeletePhotoNotification"
+
+// Home didSelectItemAt
+let kHomePhotoSelectItemNotification  = "kHomePhotoSelectItemNotification"
+
+//Home Photo Index Key
+let kHomeShowPhotoBrowserIndexKey  = "kHomeShowPhotoBrowserIndexKey"
+
+//Home Photo Url Key
+let kHomeShowPhotoBrowserUrlKey  = "kHomeShowPhotoBrowserUrlKey"
+
+
+
+

@@ -12,10 +12,10 @@ import MJRefresh
 private let HomeCellID = "HomeCellID"
 
 class HomeController: BaseTableViewController {
-
     //懒加载数组
 //    private lazy var statuses: [HomeStatusModel] = [HomeStatusModel]()
     private lazy var viewModel: [HomeViewModel] = [HomeViewModel]()
+    private lazy var  animator: PhotoBrowserAnimator = PhotoBrowserAnimator()
     private lazy var tipLabel: UILabel = UILabel() //
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +28,24 @@ class HomeController: BaseTableViewController {
         
         setupTipLabel()
         
+        setupNotification()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+        
     }
 }
-
+extension HomeController{
+    
+    
+    private func setupNotification(){
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(showPhotoBrowser), name: NSNotification.Name(kHomePhotoSelectItemNotification), object: nil)
+        
+    }
+    
+}
 //MARK: setupRefresh
 extension HomeController{
     
@@ -59,6 +74,22 @@ extension HomeController{
         loadHomeStatusFromNetwork(isNewData: false)
         
     }
+    
+    @objc  func showPhotoBrowser(noti:Notification){
+        
+        print("noti\(noti)")
+ 
+        let indexPath = noti.userInfo![kHomeShowPhotoBrowserIndexKey]  as! IndexPath
+        let picUrls = noti.userInfo![kHomeShowPhotoBrowserUrlKey] as! [NSURL]
+        let photoBrowserVc = PhotoBrowserController(indexPath: indexPath, picUrls: picUrls)
+        
+        //自定义转场动画
+         photoBrowserVc.modalPresentationStyle = .custom
+        photoBrowserVc.transitioningDelegate = animator as UIViewControllerTransitioningDelegate
+        present(photoBrowserVc, animated: true, completion: nil)
+    }
+    
+    
 }
 
 //MARK: setupTableView
@@ -87,9 +118,7 @@ extension HomeController{
         tipLabel.textColor = UIColor.white
         tipLabel.isHidden = true
         tipLabel.textAlignment = .center
-        
-        
-        
+
     }
 }
 
@@ -153,14 +182,10 @@ extension HomeController{
             
             // 缓存图片
             self.cacheImags(viewModel: tempViewModel) //缓存最新数据
-
-
 //          self.tableView.reloadData()
-        
         }
     }
-    
-    
+  
     private func cacheImags(viewModel: [HomeViewModel]){
         /**
           此处注意:
@@ -186,7 +211,6 @@ extension HomeController{
         group.notify(queue:DispatchQueue.main) {
           
             self.tableView.reloadData()
-            
             self.tableView.mj_header.endRefreshing()
             self.tableView.mj_footer.endRefreshing()
 
@@ -195,8 +219,7 @@ extension HomeController{
         
         }
     }
-    
-    
+
     private func showTipLabel(count: Int){
      
         self.tipLabel.isHidden = false
@@ -217,7 +240,6 @@ extension HomeController{
             })
         }
     }
-    
 }
 
 //MARK: - <UITableViewDataSource>
@@ -234,10 +256,8 @@ extension HomeController{
 
     }
    override  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        
+    
         return viewModel[indexPath.row].cellHeight
-        
+    
     }
-
 }

@@ -21,7 +21,10 @@ class ComposeController: UIViewController {
     @IBOutlet weak var collectionView: SelectPhotoCollectionView!
     
     @IBOutlet weak var collectionViewHeightConst: NSLayoutConstraint!
+
     
+ 
+
     //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +32,19 @@ class ComposeController: UIViewController {
         setupNav()
        
         setuoNotifactionCenter()
+        
    }
-
-  
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         composeTextView.becomeFirstResponder()
     }
+    
+
+    deinit {
+        print("deinitdeinit")
+        NotificationCenter.default.removeObserver(self)
+    }
+
 }
 
 //MARK: setuoNotifactionCenter Method
@@ -50,12 +59,10 @@ extension ComposeController{
      
     }
     
-   
-//    deinit {
-//        NotificationCenter.default.removeObserver(self)
-//    }
+
     
 }
+
 
 
 //MARK: SEL Method
@@ -87,7 +94,7 @@ extension ComposeController{
                 
         let pickerVC = UIImagePickerController()
         pickerVC.sourceType = .photoLibrary
-        pickerVC.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        pickerVC.delegate = self
 
         present(pickerVC, animated: true, completion: nil)
 
@@ -204,5 +211,6 @@ extension  ComposeController:UIImagePickerControllerDelegate,UINavigationControl
     
   
 }
+
 
 

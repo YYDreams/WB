@@ -99,8 +99,6 @@ extension BaseTabBarViewController{
         //字体大小 默认是12   要选择.normal 类型
         vc.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 15)], for: .normal)
         let nav = BaseNavViewController(rootViewController: vc)
-        
-        
         return nav
     }
 }
