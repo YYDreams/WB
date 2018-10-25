@@ -67,17 +67,17 @@ extension PhotoBrowserAnimator:UIViewControllerAnimatedTransitioning{
     
  private   func animationForDismissed( transitionContext: UIViewControllerContextTransitioning){
     
-     let dismissed = transitionContext.view(forKey: UITransitionContextViewKey.from)!
-    
-    UIView.animate(withDuration: transitionDuration(using: transitionContext) , animations: {
-        
-        dismissed.alpha = 0.0
-        
-    }) { (_) in
-        
-        dismissed.removeFromSuperview()
-        
-    }
+//     let dismissed = transitionContext.view(forKey: UITransitionContextViewKey.from)!
+//    
+//    UIView.animate(withDuration: transitionDuration(using: transitionContext) , animations: {
+//        
+//        dismissed.alpha = 0.0
+//        
+//    }) { (_) in
+//        
+//        dismissed.removeFromSuperview()
+//        
+//    }
         
   }
     

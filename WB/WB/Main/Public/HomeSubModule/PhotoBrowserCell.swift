@@ -107,7 +107,7 @@ class PhotoBrowserCell: UICollectionViewCell {
         progressView.isHidden = false
         picUrlImageView.sd_setImage(with: getBigUrl(smallUrl: picUrls) as URL, placeholderImage: image, options: [], progress: { (current, total, _) in
             
-            self.progressView.progress = CGFloat(current) / CGFloat(total)
+//            self.progressView.progress = CGFloat(current) / CGFloat(total)
             
             
         }) { (_, _, _, _) in
