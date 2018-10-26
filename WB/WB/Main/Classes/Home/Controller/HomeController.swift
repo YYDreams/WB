@@ -21,9 +21,9 @@ class HomeController: BaseTableViewController {
         super.viewDidLoad()
 
         setupNav()
-        setupTableView()
+       
     if !UserAccount.userLogin() { return}
-
+        setupTableView()
         setupRefresh()
         
         setupTipLabel()
@@ -84,8 +84,8 @@ extension HomeController{
         let photoBrowserVc = PhotoBrowserController(indexPath: indexPath, picUrls: picUrls)
         
         //自定义转场动画
-         photoBrowserVc.modalPresentationStyle = .custom
-        photoBrowserVc.transitioningDelegate = animator as UIViewControllerTransitioningDelegate
+//         photoBrowserVc.modalPresentationStyle = .custom
+//        photoBrowserVc.transitioningDelegate = animator as UIViewControllerTransitioningDelegate
         present(photoBrowserVc, animated: true, completion: nil)
     }
     

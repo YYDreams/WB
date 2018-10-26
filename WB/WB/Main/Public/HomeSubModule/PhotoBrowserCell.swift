@@ -59,7 +59,7 @@ class PhotoBrowserCell: UICollectionViewCell {
         addSubview(progressView)
         scrollView.frame = contentView.bounds
         
-//        scrollView.bounds.size.width -= 20  // 
+        scrollView.bounds.size.width -= 20  //
         progressView.bounds = CGRect(x: 0, y: 0, width: 50, height: 50)
         progressView.center = CGPoint(x: screenW * 0.5 , y: screenH * 0.5)
         progressView.isHidden = true

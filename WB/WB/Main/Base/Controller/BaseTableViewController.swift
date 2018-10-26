@@ -25,8 +25,13 @@ class BaseTableViewController: UITableViewController {
             
             setupNav()
             
+            NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(kLoginSuccessNotification), object: nil)
             setupTableViewInit()
         }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
 extension BaseTableViewController{
@@ -40,7 +45,13 @@ extension BaseTableViewController{
 
 extension BaseTableViewController{
     
-    
+    @objc  private func  loginSuccess(){
+        
+        navigationItem.leftBarButtonItem = nil
+        navigationItem.rightBarButtonItem = nil
+        
+        
+    }
     private func setupNav(){
         
         if !UserAccount.userLogin() {

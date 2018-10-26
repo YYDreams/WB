@@ -23,8 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         setupAppearance() // 全局nav、tabBar 字体颜色设置
         
-    NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(rawValue: kLoginSuccessNotification), object: nil)
-        
+//    NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(rawValue: kLoginSuccessNotification), object: nil)
+//
         return true
     }
 

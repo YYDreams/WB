@@ -31,7 +31,7 @@ class PhotoBrowserController: BaseUIViewController {
         collectionView.scrollToItem(at: selectIdexPath, at: .left, animated: false)
 
          //23  细看一遍
-//        view.frame.size.width += 20
+        view.frame.size.width += 20
     }
 
     private lazy var closeBtn: UIButton = {
@@ -60,12 +60,14 @@ class PhotoBrowserController: BaseUIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: screenW  , height: screenH)
-        
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
         
         let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: screenW, height: screenH), collectionViewLayout: layout)
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = UIColor.black
+        collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(PhotoBrowserCell.self, forCellWithReuseIdentifier: "PhotoBrowserCellID")
